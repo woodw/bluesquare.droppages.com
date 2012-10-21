@@ -1,0 +1,139 @@
+:Base
+
+
+<style>
+		body{
+			overflow: -moz-scrollbars-vertical;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var xmlData = '';
+		$.ajax({
+			type: "GET",
+			url: "data/mind.xml",
+			dataType: "xml",
+			success: function(xml) {
+				$(xml).find('post').each(function(index){
+					
+					var tempTD = $('<td>').css({'text-align':'top'});
+					
+					$(this).find('category').each(function(){
+						tempTD.append($('<img>').addClass('icon').attr({'src':'/images/icons/'+$(this).text()+'.png'}));
+					});
+					
+					tempTD.append(($(this).find('title').text().length>4)?$('<h3>').text($(this).find('title').text()):'',($(this).find('title').text().length>4)?'<br />':'');
+					
+					$(this).find('section').each(function(){
+						tempTD.append($('<p>').text($(this).text()),'<br />');
+					});
+					
+					$(this).find('image').each(function(){
+						tempTD.append($('<a>').addClass('showImg').text('Show Image'),'<br />',$('<img>').addClass('blog_image').attr({'src':'/images/'+$(this).text()}),'<br />');
+					});
+					
+					$(this).find('link').each(function(){
+						tempTD.append($('<a>').attr({'href':$(this).text()}).text($(this).attr('title')),'<br />');
+					});
+					
+					tempTD.append('<br /><h5>_| '+$(this).find('date').text()+' |_| '+$(this).find('time').text()+' |_</h5>');
+					
+					$('ul').append(
+						$('<li>').append(
+							$('<table>').append(
+								$('<tr>').append(
+										tempTD
+								)
+							)
+						)
+					);
+
+					var width = $('ul li:last table').width()+30;
+					var documentWidth = $('canvas').width();
+					$('ul li:last').css({
+						'margin-left':(Math.random()*((documentWidth/3)-width))
+					});
+				});
+			},
+			error: function(xml) {
+			}
+		});
+		$('.showImg').click(function(){
+			alert('nope');
+			//$(this).sibling('img').slideToggle();
+		});
+	});
+</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('canvas').ready(function() {
+				set();
+				drawShape();
+			});
+			function set(){
+				$('canvas').attr({
+					'width':$(document).width(),
+					'height':$(document).height()
+				}).css({
+					'position':'fixed',
+					'left':0,
+					'top':0
+				});
+			}
+			
+			function drawShape(){
+			  // get the canvas element using the DOM
+			  var canvas = document.getElementById('canvas');
+
+			  // Make sure we don't execute when canvas isn't supported
+			  if (canvas.getContext){
+
+				// use getContext to use the canvas for drawing
+				var ctx = canvas.getContext('2d');
+
+				draw(ctx);
+
+			  } else {
+				alert('You need Safari or Firefox 1.5+ to see this demo.');
+			  }
+			}
+			
+			function draw(ctx) {
+				var lleft,ttop,colorFill;
+				for (i=0;i<50;i++){
+					//Draw shapes
+					lleft = Math.floor(Math.random()*$('canvas').width());
+					ttop = Math.floor(Math.random()*$('canvas').height());
+					switch(Math.floor(Math.random()*10))
+					{
+						case 0:
+							ctx.fillStyle = "#152F3E";
+							break;
+						case 1:
+							ctx.fillStyle = "#A5CAE0";
+							break;
+						case 2:
+							ctx.fillStyle = "#767676";
+							break;
+						case 3:
+							ctx.fillStyle = "#3C85B1";
+							break;
+						default:
+							ctx.fillStyle = "transparent";
+							break;
+					}
+					ctx.globalAlpha = Math.random();
+					ctx.lineWidth = 7;
+					ctx.lineCap = 'round';
+					//ctx.fillStyle = "#FF0000";  
+					ctx.strokeStyle = "#FFFFFF"; 
+					ctx.fillRect(lleft+3,ttop+3,100-6,100-6);
+					ctx.strokeRect(lleft,ttop,100,100);
+				}
+			}
+		});
+	</script>
+<canvas id="canvas"></canvas>
+<ul></ul>

@@ -1,0 +1,64 @@
+:Project
+
+
+#The How And Why:
+
+###Using xml files as your data source
+*	It began really with my desire to find a way for me to write information on the web but not have to spend money to do so... not that I'm cheap or anything. This lead me to sites like <a href="http://www.google.com/sites">GoogleSites</a> and <a href="http://www.coralrift.com">CoralRift</a> which both allow you to share information but with differant design control.  
+
+####How
+Take a simple website
+
+*	&lt;html&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br />
+	&lt;/html&gt;
+
+Add save it somewhere in a folder
+
+*	"FolderName/PageName.html"
+
+Take a .xml document
+
+*	&lt;?xml version="1.0"?&gt;
+	&lt;Shape&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;color&gt;blue&lt;/color&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&gt;Square&lt;/type&gt;<br />
+	&lt;/Shape&gt;
+	
+Add save it in the created folder
+
+*	"FolderName/Data.xml"
+
+Back to your webpage, add a jquery reference as well as a basic ajax call.
+
+*	&lt;html&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="http://code.jquery.com/jquery-1.7.1.min.js" &gt;&lt;/script&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function() {
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.ajax({
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: "GET",
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: "data.xml",
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataType: "xml",
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success: function(xml) {
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error: function(xml) {
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+	&nbsp;&nbsp;&nbsp;&nbsp;});
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br />
+	&lt;/html&gt;
+
+> You can use a differant datatype when doing this call or even use a basic .load() but its my belief that any styling should be done outside of a datafile and not stored within. 
+	
+####Why
+
+* Use what you need and no more.
+ To get around server-"less" control.
+ Broken XSLT links are your friend.

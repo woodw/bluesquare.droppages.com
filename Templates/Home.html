@@ -1,0 +1,108 @@
+:Base
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var documentWidth = $(document).width()	, documentHeight = $(document).height();
+		var Message = 'Welcome    To:           blue Square    By:  Will i am Wood';
+		$('body').css({'background-color':'#152F3E','overflow':'hidden'}).append($('<div>').attr({'id':'div_background'}),$('<div>').attr({'id':'div_box'}));
+		
+		for(i=0;i<50;i++)
+		{
+		//alert('mop');
+			$('#div_background').append($('<div>').addClass('div_cubes'));
+		}
+		
+		for(i=0;i<12;i++)
+		{
+		//alert('mop');
+			$('#div_box').append($('<div>').addClass('div_cube_containers'));
+		}
+		
+		$('.div_cubes').each(function(){
+			var hope = $(this);
+			
+			$(this).css({
+			'position':'absolute',
+			'left':Math.floor(Math.random()*documentWidth),
+			'top':Math.floor(Math.random()*documentHeight),
+			'width':'100px',
+			'height':'100px',
+			'border':'7px solid #CCCCCC',
+			//'background-color':'#3C85B1',
+			'opacity':Math.random()}).ready(function(){
+				moveSomeWhere(hope);
+			});
+		});
+		
+		$('.div_cube_containers').each(function (index) {
+			$(this).css({
+				'position':'absolute',
+				'left':((Math.floor(Math.random()*2)-1)*documentWidth),
+				'top':((Math.floor(Math.random()*2)-1)*documentHeight),
+				//'left':(50+(110*(index%4))),
+				//'top':(50+(110*(Math.floor(index/4)))),
+				'width':'100px',
+				'height':'100px',
+				'border':'5px solid #EEEEEE',
+				'background-color':'#3C85B1',
+				'opacity':'0.9',
+				'cursor':'pointer'
+			}).append('<br /><h2>'+Message.substring((index*5),(index*5)+5)+'</h2>').draggable({
+				revert: true, 
+				zIndex: 2700,
+				stop: function(event, ui) {
+					//0 0
+					//0 height
+					//width 0
+					$('div').each(function (){
+						switch(Math.floor(Math.random()*4))
+						{
+							case 0:
+								$(this).stop(true,false).animate({'left':'-200px','top':(Math.random()*documentHeight)},500);		
+								break;
+							case 1:
+								$(this).stop(true,false).animate({'left':(Math.random()*documentWidth),'top':'-200px'},500);	
+								break;
+							case 2:
+								$(this).stop(true,false).animate({'left':(200+documentWidth),'top':(Math.random()*documentHeight)},500);	
+								break;
+							case 3:
+								$(this).stop(true,false).animate({'left':(Math.random()*documentWidth),'top':(200+documentHeight)},500);	
+								break;
+							}
+						window.location = "http://bluesquare.droppages.com/Blog";
+					});
+				}
+			});
+			//alert($(this).attr('class'));
+			$(this).animate({'left':((500+(100*($(this).index()%4))+(Math.floor(Math.random()*20)-10))),'top':((300 +(100*(Math.floor($(this).index()/4)))+(Math.floor(Math.random()*20)-10)))},($(this).index()*300)+300);	
+		});
+		
+		$('.div_cubes').toggle(function () {		
+			//$(this).css({'background-color':'#152F3E'});
+		//}, function() {
+			$(this).css({'background-color':'#A5CAE0'});
+		}, function() {
+			$(this).css({'background-color':'#767676'});
+		}, function() {
+			$(this).css({'background-color':'#3C85B1'});
+		}, function() {
+			$(this).css({'background-color':'transparent'});
+		});
+		
+		//$(document).click(function () {
+		//	$('div').stop(true,true);
+		//	$('div').remove();
+		//});
+		
+		function moveSomeWhere (bobby){
+			//bobby.text('loop');
+			//alert($(bobby).attr('style'));
+			$(bobby).animate({'left':Math.floor(Math.random()*documentWidth),'top':Math.floor(Math.random()*documentHeight)},10000+Math.floor(Math.random()*(15000)),function(){
+				moveSomeWhere($(bobby));
+				//alert($(document).width());//ad
+			});
+		}
+	});
+</script>
+{{Body}}
