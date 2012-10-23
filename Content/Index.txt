@@ -1,0 +1,16 @@
+:Home
+It's Business time.
+===================
+
+A business (also known as enterprise or firm) is an organization designed to provide goods, services, or both to consumers. Businesses are predominant in capitalist economies, in which most of them are privately owned and formed to earn profit to increase the wealth of their owners. Businesses may also form not-for-profit or be state-owned. A business owned by multiple individuals may be referred to as a company, although that term also has a more precise meaning.
+
+The etymology of "business" relates to the state of being busy either as an individual or society as a whole, doing commercially viable and profitable work. The term "business" has at least three usages, depending on the scope — the singular usage to mean a particular organization; the generalized usage to refer to a particular market sector, "the music business" and compound forms such as agribusiness; and the broadest meaning, which encompasses all activity by the community of suppliers of goods and services. However, the exact definition of business, like much else in the philosophy of business, is a matter of debate and complexity of meanings.
+
+@Sidebar
+Extend!
+-------
+* This is a bare stub of a theme, you should work with the html/css to build on the layout.
+
+* The basic layout/style is pretty vanilla, feel free to change everything!
+
+* The templates are just for demonstration: use them, delete them or create new ones.

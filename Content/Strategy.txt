@@ -1,0 +1,9 @@
+:FullWidth
+Strategy
+========
+
+Strategy, a word of military origin, refers to a plan of action designed to achieve a particular goal. In military usage strategy is distinct from tactics, which are concerned with the conduct of an engagement, while strategy is concerned with how different engagements are linked. How a battle is fought is a matter of tactics: the terms and conditions that it is fought on and whether it should be fought at all is a matter of strategy, which is part of the four levels of warfare: political goals or grand strategy, strategy, operations, and tactics. Building on the work of many thinkers on the subject, one can define strategy as "a comprehensive way to try to pursue political ends, including the threat or actual use of force, in a dialectic of wills – there have to be at least two sides to a conflict. These sides interact, and thus a Strategy will rarely be successful if it shows no adaptability."
+
+The word strategy derives from the Greek "στρατηγία" (strategia), "office of general, command, generalship",[2] in turn from "στρατηγός" (strategos), "leader or commander of an army, general",[3] a compound of "στρατός" (stratos), "army, host" + "ἀγός" (agos), "leader, chief",[4] in turn from "ἄγω" (ago), "to lead".[5] We have no evidence of it being used in a modern sense in Ancient Greek, but find it in Byzantine documents from the 6th century onwards, and most notably in the work attributed to Emperor Leo VI the Wise of Byzantium. The word was first used in German as "Strategie" in a translation of Leo's work in 1777, shortly thereafter in French as "stratégie" by Leo's French translator, and was first attested in English 1810.[1]
+
+@image /pic-03.jpg

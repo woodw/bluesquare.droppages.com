@@ -1,0 +1,7 @@
+:Sitemap
+Sitemap
+========
+
+This page lists all pages in the site (except hidden ones like this)
+
+@image /pic-03.jpg

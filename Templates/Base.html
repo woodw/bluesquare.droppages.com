@@ -2,19 +2,50 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{{title}} &mdash; blueSquare</title>
+    <title>{{title}} &mdash; BusinessTime demo site</title>
 
     <!-- Framework CSS -->
-	<link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/print.css" type="text/css" media="print">
     <!--[if lt IE 8]><link rel="stylesheet" href="/ie.css" type="text/css" media="screen, projection"><![endif]-->
-	<script src="/jscript/jquery.js"></script>
-	<script src="/jscript/jquery-ui.min.js"></script>
-	<!-- <script src="/jscript/intro.js"></script> -->
-	<script src="/jscript/easing.js"></script>
-	<script src="/jscript/blueFriend.js"></script>
-
   </head>
   <body>
-	    {{Body}}
+
+    <div class="container">
+   	  <hr class="space" />
+      <h1 class="logo">Business <span>Time</span></h1>
+      <div class="nav span-23 prepend-1 large" style="background-image:url({{image /pic-01.jpg}});">
+	  	{{PrimaryNavigation}}
+	  </div>
+      <div class="page">
+          <hr class="space" />
+	      	{{Body}}
+		  <hr class="space" />
+      </div>
+      <div class="footer">
+        <hr class="space" />
+	    <div class="span-6 colborder prepend-1 append-1">
+	      	<h3>Note</h3>
+	      	<p>The sample content for this<br/>
+	      	site was copied from <a href="http://en.wikipedia.org">wikipedia.org</a></p>
+	    </div>
+	    <div class="span-8 prepend-1 append-1 colborder">
+	      	<h3>Contact details</h3>
+	      	<p>
+	      		Twitter: <a href="http://twitter.com/davemcdermid">Dave McDermid</a><br/>
+	      		You should update this<br/>
+	      		with your own info.</p>
+	    </div>
+        <div class="span-5 prepend-1 last">
+        	<h3>Lost?</h3>
+			<p><a href="/Sitemap">Try the sitemap</a>.</p>
+	  	</div>
+   	    <hr class="space" />
+      </div>
+   	  <hr class="space" />
+      <div class="tail">
+      	Another site powered by <a href="http://droppages.com">DropPages</a>
+      </div>
+    </div>
   </body>
 </html>

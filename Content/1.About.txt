@@ -1,0 +1,11 @@
+:FullWidth
+About
+=====
+
+This is a simple theme, based on the [Blueprint CSS framework](http://www.blueprintcss.org/).
+
+The header images are just provided as samples, and should be replaced with something more appropriate or relevant.
+
+The HTML is not particularly elegant or semantic. Feel free to improve this!
+
+@image /pic-02.jpg
